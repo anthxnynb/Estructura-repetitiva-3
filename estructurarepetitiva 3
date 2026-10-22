@@ -1,0 +1,44 @@
+Algoritmo Contar_Aprobados_Reprobados()
+//declaracion de variable
+    Definir N, i, aprobados, reprobados Como Entero
+    Definir nota Como Real
+//control de variables
+    Escribir "Ingrese la cantidad de estudiantes:"
+    Leer N
+
+    Mientras N <= 0 Hacer
+        Escribir "Error: la cantidad debe ser mayor que cero."
+        Escribir "Ingrese nuevamente la cantidad de estudiantes:"
+        Leer N
+    FinMientras
+
+    aprobados = 0
+    reprobados = 0
+    i = 1
+
+    Mientras i <= N Hacer
+
+        Escribir "Ingrese la calificacion del estudiante ", i, " (0 a 10):"
+        Leer nota
+
+        Mientras nota < 0 O nota > 10 Hacer
+            Escribir "Error: la calificacion debe estar entre 0 y 10."
+            Escribir "Ingrese nuevamente la calificacion:"
+            Leer nota
+        FinMientras
+
+        Si nota >= 7 Entonces
+            aprobados = aprobados + 1
+        Sino
+            reprobados = reprobados + 1
+        FinSi
+
+        i = i + 1
+
+    FinMientras
+
+    Escribir "Total de estudiantes: ", N
+    Escribir "Cantidad de aprobados: ", aprobados
+    Escribir "Cantidad de reprobados: ", reprobados
+
+FinAlgoritmo
